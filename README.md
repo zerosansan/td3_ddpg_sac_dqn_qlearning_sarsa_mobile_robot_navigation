@@ -4,7 +4,7 @@ This repository contains codes to replicate my research work titled "Deep Reinfo
 
 In addition, it also provides a framework to train and test six different algorithms which are TD3, DDPG, SAC, Q-Learning, SARSA, and DQN. Turtlebot3 Burger mobile robot platform was used to train and test these algorithms. Unlike my [other repository](https://github.com/zerosansan/dqn_qlearning_sarsa_mobile_robot_navigation), I have completely removed the dependency of OpenAI so it is a much simpler process to get our codes to run in your own workspace.
 
-[![Watch the video](https://img.youtube.com/vi/djD9mfPQRgc/maxresdefault.jpg)](https://youtu.be/djD9mfPQRgc)
+[![Watch the video](https://github.com/zerosansan/td3_ddpg_sac_dqn_qlearning_sarsa_mobile_robot_navigation/blob/master/drl_system_overview.png)](https://youtu.be/djD9mfPQRgc)
 
 If you have found this repository useful or have used this repository in any of your scientific work, please consider citing my work using this [BibTeX Citation](#bibtex-citation). A full demonstration video of the mobile robot navigation has been uploaded on [Youtube](https://www.youtube.com/watch?v=djD9mfPQRgc&t=1s).
 
