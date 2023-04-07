@@ -12,8 +12,6 @@ If you have found this repository useful or have used this repository in any of 
 
 * [Installation](#installation)
 * [Repository contents](#repository-contents)
-* [System overview](#system-overview)
-* [Crowd navigation performance](#crowd-navigation-performance)
 * [Getting started](#getting-started)
 * [Hardware and software information](#hardware-and-software-information)
 * [BibTeX Citation](#bibtex-citation)
@@ -32,12 +30,6 @@ If you have found this repository useful or have used this repository in any of 
 **turtlebot3_description** - This folder contains core files to run Turtlebot3 in Gazebo simulator with the same settings used in our work.
 
 **turtlebot3_simulations** - This folder contains the Gazebo simulation launch files, models, and worlds.
-
-## System Overview
-![overview](https://github.com/zerosansan/td3_ddpg_sac_dqn_qlearning_sarsa_mobile_robot_navigation/blob/master/drl_system_overview.png)
-
-## Crowd Navigation Performance
-![results](https://github.com/zerosansan/td3_ddpg_sac_dqn_qlearning_sarsa_mobile_robot_navigation/blob/master/final_crowd_nav_results.png)
 
 ## Getting Started
 
