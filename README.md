@@ -88,16 +88,16 @@ If you have found this repository useful or have used this repository in any of 
 
 ## BibTeX Citation
 
-If you have used this repository in any of your scientific work, please consider citing my work:
+If you have used this repository in any of your scientific work, please consider citing my work (submitted to IROS2023):
 
 ```
-@inproceedings{anas2022comparison,
-  title={Comparison of Deep Q-Learning, Q-Learning and SARSA Reinforced Learning for Robot Local Navigation},
-  author={Anas, Hafiq and Ong, Wee Hong and Malik, Owais Ahmed},
-  booktitle={International Conference on Robot Intelligence Technology and Applications},
-  pages={443--454},
-  year={2022},
-  organization={Springer}
+@misc{anas2023deep,
+      title={Deep Reinforcement Learning-Based Mapless Crowd Navigation with Perceived Risk of the Moving Crowd for Mobile Robots}, 
+      author={Hafiq Anas and Ong Wee Hong and Owais Ahmed Malik},
+      year={2023},
+      eprint={2304.03593},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO}
 }
 ```
 
