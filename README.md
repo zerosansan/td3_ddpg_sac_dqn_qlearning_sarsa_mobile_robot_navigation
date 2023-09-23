@@ -56,15 +56,15 @@ If you have found this repository useful or have used this repository in any of 
 **Start testing with TD3**
 
 Firstly, we must use the following parameters in the `start_td3_training.py` script:
-```
-resume_epoch = 1500 <-- (e.g. 1500 means it will use the model saved at episode 1500)
+```python
+resume_epoch = 1500  # e.g. 1500 means it will use the model saved at episode 1500
 continue_execution = True
 learning = False
-k_obstacle_count = 8 <-- (K = 8 implementation)
+k_obstacle_count = 8  # K = 8 implementation
 utils.record_data(data, result_outdir, "td3_training_trajectory_test") <-- Change the string name accordingly, to avoid overwriting the training results file
 ```
 Secondly, edit the `turtlebot3_world.yaml` file to reflect the following settings:
-```
+```yaml
 min_scan_range: 0.0 # To get reliable social and ego score readings, depending on evaluation metrics
 desired_pose:
     x: -2.0
@@ -76,8 +76,8 @@ starting_pose:
     z: 0.0
 ```
 Thirdly, edit the `environment_stage_1_nobonus.py` script to reflect the following settings:
-```
-self.k_obstacle_count = 8 <-- (K = 8 implementation)
+```python
+self.k_obstacle_count = 8  #K = 8 implementation
 ```
 1. Launch the Gazebo world:
 - Run `roslaunch turtlebot3_gazebo turtlebot3_obstacle_20.launch` in your terminal.
@@ -93,12 +93,12 @@ self.k_obstacle_count = 8 <-- (K = 8 implementation)
 1. Physical deployment requires the Turtlebot3 itself and a remote PC to run.
 
 2. On the Turtlebot3:
-- Run `roslaunch turtlebot3_bringup turtlebot3_robot.launch`
+- Run `roslaunch turtlebot3_bringup turtlebot3_robot.launch` in your terminal.
 
 3. On the remote PC:
 - Run `roscore`
-- Run `roslaunch turtlebot3_bringup turtlebot3_remote.launch`
-- Run `roslaunch turtlebot3_rl_sim start_td3_real_world_test.launch`
+- Run `roslaunch turtlebot3_bringup turtlebot3_remote.launch` in your terminal.
+- Run `roslaunch turtlebot3_rl_sim start_td3_real_world_test.launch` in your terminal.
 
 ## Hardware and Software Information
 
