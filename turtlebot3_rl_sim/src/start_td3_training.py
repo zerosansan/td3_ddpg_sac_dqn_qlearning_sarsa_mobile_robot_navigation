@@ -158,7 +158,6 @@ if __name__ == '__main__':
                 else:
                     data = [ep + 1, success_episode, failure_episode, cumulated_reward, step + 1, ego_safety_score,
                             social_safety_score, time_lapse]
-                data = [ep + 1, success_episode, failure_episode, cumulated_reward, step + 1]
                 utils.record_data(data, result_outdir, "td3_training_trajectory_test")
                 print("EPISODE REWARD: ", cumulated_reward)
                 print("EPISODE STEP: ", step + 1)
