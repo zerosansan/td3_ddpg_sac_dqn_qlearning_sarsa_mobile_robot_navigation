@@ -14,6 +14,7 @@ from tf.transformations import euler_from_quaternion
 from shapely.geometry import LineString
 from shapely.geometry import Point
 from shapely.geometry.polygon import Polygon
+from visualization_msgs.msg import Marker
 
 
 def load_q(file):
