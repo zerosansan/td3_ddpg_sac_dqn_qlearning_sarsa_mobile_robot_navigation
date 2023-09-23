@@ -61,11 +61,11 @@ if __name__ == '__main__':
         softupdate_coefficient = rospy.get_param("/turtlebot3/tau")
         batch_size = 128
         memory_size = 1000000
-        network_inputs = 363 #370 #74 #38 #54  # State dimension
+        network_inputs = 363  # 370 #74 #38 #54  # State dimension
         hidden_layers = 256  # Hidden dimension
         network_outputs = 2  # Action dimension
-        action_v_max = 0.22 #0.22  # m/s
-        action_w_max = 2.0 #2.0  # rad/s
+        action_v_max = 0.22  # 0.22  # m/s
+        action_w_max = 2.0  # 2.0  # rad/s
         resume_epoch = 0
         noise_std = 0.2
         noise_clip = 0.5
@@ -153,8 +153,11 @@ if __name__ == '__main__':
                     td3_trainer.save_critic1_model(model_outdir, "td3_critic1_model_ep" + str(ep + 1) + '.pt')
                     td3_trainer.save_critic2_model(model_outdir, "td3_critic2_model_ep" + str(ep + 1) + '.pt')
                 rospy.logwarn("DONE")
-                # data = [ep + 1, success_episode, failure_episode, cumulated_reward, step + 1, ego_safety_score,
-                # social_safety_score, time_lapse]
+                if learning:
+                    data = [ep + 1, success_episode, failure_episode, cumulated_reward, step + 1]
+                else:
+                    data = [ep + 1, success_episode, failure_episode, cumulated_reward, step + 1, ego_safety_score,
+                            social_safety_score, time_lapse]
                 data = [ep + 1, success_episode, failure_episode, cumulated_reward, step + 1]
                 utils.record_data(data, result_outdir, "td3_training_trajectory_test")
                 print("EPISODE REWARD: ", cumulated_reward)
