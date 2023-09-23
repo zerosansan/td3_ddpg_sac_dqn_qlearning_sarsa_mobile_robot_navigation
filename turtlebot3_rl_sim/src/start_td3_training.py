@@ -40,6 +40,7 @@ if __name__ == '__main__':
 
     resume_epoch = 1500
     continue_execution = False
+    learning = True
     actor_resume_path = actor_model_param_path + str(resume_epoch)
     critic1_resume_path = critic1_model_param_path + str(resume_epoch)
     critic2_resume_path = critic2_model_param_path + str(resume_epoch)
@@ -129,9 +130,10 @@ if __name__ == '__main__':
             next_state = np.float32(next_state)
 
             # Learning
-            td3_trainer.memory.add(state, action, reward, next_state, done)
-            if len(td3_trainer.memory) > batch_size:
-                td3_trainer.learn(step)
+            if learning:
+                td3_trainer.memory.add(state, action, reward, next_state, done)
+                if len(td3_trainer.memory) > batch_size:
+                    td3_trainer.learn(step)
 
             if not done:
                 # rospy.logwarn("NOT DONE")
