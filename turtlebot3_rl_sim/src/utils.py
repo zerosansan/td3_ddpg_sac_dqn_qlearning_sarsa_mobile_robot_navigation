@@ -34,6 +34,7 @@ def get_q(q, state, action):
     """
     return q.get((state, action), 0.0)
 
+
 # Logging methods
 def remove_logfile_if_exist(outdir, filename):
     try:
@@ -52,7 +53,8 @@ def remove_qfile_if_exist(outdir, file):
 def record_data(data, outdir, filename):
     file_exists = os.path.isfile(outdir + "/" + filename + ".csv")
     with open(outdir + "/" + filename + ".csv", "a") as fp:
-        headers = ['episode_number', 'success_episode', 'failure_episode', 'episode_reward', 'episode_step', 'ego_safety_score', 'social_safety_score', 'timelapse']
+        headers = ['episode_number', 'success_episode', 'failure_episode', 'episode_reward', 'episode_step',
+                   'ego_safety_score', 'social_safety_score', 'timelapse']
         writer = csv.DictWriter(fp, delimiter=',', lineterminator='\n', fieldnames=headers)
 
         if not file_exists:
@@ -232,6 +234,7 @@ def get_timestep_velocity(poses, timelapse):
     resultant_velocity = math.sqrt(math.pow(vel_x, 2) + math.pow(vel_y, 2))
 
     return resultant_velocity
+
 
 def get_timestep_distance(poses):
     delta_pos_x = poses[1][0] - poses[0][0]
@@ -455,6 +458,7 @@ def get_iou(scan1, scan2, bounding_box_size):
     iou = round(poly_1.intersection(poly_2).area / poly_1.union(poly_2).area, 3)
 
     return iou
+
 
 def check_list(sample_list, index_to_check):
     try:
