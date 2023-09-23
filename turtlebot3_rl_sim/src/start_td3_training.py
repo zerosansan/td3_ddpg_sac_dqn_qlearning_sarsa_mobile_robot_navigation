@@ -29,8 +29,8 @@ if __name__ == '__main__':
     # Set the logging system
     rospack = rospkg.RosPack()
     pkg_path = rospack.get_path('turtlebot3_rl_sim')
-    result_outdir = pkg_path + '/src/results/td3_final' + '/' + stage_name
-    model_outdir = pkg_path + '/src/models/td3_final' + '/' + stage_name
+    result_outdir = pkg_path + '/src/results/td3' + '/' + stage_name
+    model_outdir = pkg_path + '/src/models/td3' + '/' + stage_name
     actor_model_param_path = model_outdir + '/td3_actor_model_ep'
     critic1_model_param_path = model_outdir + '/td3_critic1_model_ep'
     critic2_model_param_path = model_outdir + '/td3_critic2_model_ep'
