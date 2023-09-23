@@ -57,7 +57,7 @@ if __name__ == '__main__':
         critic_learning_rate = rospy.get_param("/turtlebot3/critic_alpha")
         discount_factor = rospy.get_param("/turtlebot3/gamma")
         softupdate_coefficient = rospy.get_param("/turtlebot3/tau")
-        batch_size = 128  # 128
+        batch_size = 128
         memory_size = 1000000
         network_inputs = 363 #370 #74 #38 #54  # State dimension
         hidden_layers = 256  # Hidden dimension
@@ -81,7 +81,7 @@ if __name__ == '__main__':
         critic_learning_rate = rospy.get_param("/turtlebot3/critic_alpha")
         discount_factor = rospy.get_param("/turtlebot3/gamma")
         softupdate_coefficient = rospy.get_param("/turtlebot3/tau")
-        batch_size = 256  # 128
+        batch_size = 128
         memory_size = 1000000
         network_inputs = 363  # State dimension
         hidden_layers = 256  # Hidden dimension
