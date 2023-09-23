@@ -106,7 +106,7 @@ self.k_obstacle_count = 8  #K = 8 implementation
 
 - OS: Ubuntu 18.04
 - ROS version: Melodic
-- Python version: 2.7 (Code is in Python3, so porting to a newer version of ROS/Ubunntu should have no issues)
+- Python version: 2.7 (Code is in Python3, so porting to a newer version of ROS/Ubuntu should have no issues)
 - Gazebo version: 9.19
 - CUDA version: 10.0
 - CuDNN version: 7
