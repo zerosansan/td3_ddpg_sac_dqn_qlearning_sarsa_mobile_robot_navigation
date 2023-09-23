@@ -287,6 +287,27 @@ def get_collision_point(agent_poses, obstacle_poses, obstacle_pose_radius):
     return dist_to_cp
 
 
+def get_local_goal_waypoints(agent_pose, goal_pose, boundary_radius, epsilon=0.0):
+    # Implementation is based on getting the point of intersection between a line from the agent's position
+    # to the goal position where the circle region is from the agent position with a radius according to the max
+    # laser scan distance
+    # If no intersection is found, then use the original goal point as the next waypoint
+    p = Point(agent_pose[0], agent_pose[1])
+    c = p.buffer(boundary_radius).boundary
+    l = LineString([(agent_pose[0], agent_pose[1]), (goal_pose[0], goal_pose[1])])
+    i = c.intersection(l)
+
+    if str(i) != 'LINESTRING EMPTY':
+        try:
+            goal_waypoints = [i.x, i.y]
+        except Exception:
+            goal_waypoints = [-(goal_pose[0] + epsilon), goal_pose[1] + epsilon]
+    else:
+        goal_waypoints = [-(goal_pose[0] + epsilon), goal_pose[1] + epsilon]
+
+    return goal_waypoints
+
+
 def compute_collision_prob(time_to_collision):
     if time_to_collision is not None:
         collision_probability = min(1, 0.15 / time_to_collision)
